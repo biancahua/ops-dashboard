@@ -1,0 +1,29 @@
+{
+  "name": "ops-dashboard",
+  "version": "1.0.0",
+  "description": "Operations Dashboard",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "cd apps/api && npm run start:dev",
+    "dev:web": "cd apps/web && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biancahua/ops-dashboard.git"
+  },
+  "keywords": [
+    "ops",
+    "dashboard"
+  ],
+  "author": "Bianca Hua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biancahua/ops-dashboard/issues"
+  },
+  "homepage": "https://github.com/biancahua/ops-dashboard#readme",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
