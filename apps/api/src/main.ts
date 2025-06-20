@@ -66,7 +66,7 @@ async function walkAndLoad(dir: string, messageRepo: Repository<Message>) {
     const fullPath = path.join(dir, entry.name);
 
     if (entry.isDirectory()) {
-      await walkAndLoad(fullPath, messageRepo); // recurse into folders
+      await walkAndLoad(fullPath, messageRepo);
     } else if (entry.name.endsWith('.jsonl')) {
       await processJsonlFile(fullPath, messageRepo);
     }
@@ -77,6 +77,18 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   await AppDataSource.initialize();
   const messageRepo = AppDataSource.getRepository(Message);
+
+  app.enableCors({
+    origin: [
+      'http://localhost:3000',
+      'http://localhost:3001',
+      'http://127.0.0.1:3000',
+      'http://127.0.0.1:3001',
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  });
 
   const baseConversationsPath = path.join(__dirname, '../conversations');
   const callsPath = path.join(baseConversationsPath, 'calls');
