@@ -7,3 +7,7 @@ node_modules
 .env.development
 .env.test
 .env.production
+apps/web/.next/
+apps/web/node_modules/
+apps/api/node_modules/
+apps/api/dist/

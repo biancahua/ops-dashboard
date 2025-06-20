@@ -22,6 +22,7 @@ interface MessageData {
     result?: string;
     error?: string | null;
   }>;
+  timestamp?: string;
 }
 
 async function processJsonlFile(
@@ -48,6 +49,7 @@ async function processJsonlFile(
         urgency: data.urgency ?? null,
         status: data.status ?? null,
         actions: data.actions ?? [],
+        timestamp: new Date(data.timestamp),
       });
 
       await messageRepo.save(message);

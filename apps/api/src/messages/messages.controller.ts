@@ -11,4 +11,15 @@ export class MessagesController {
   async getMessages(@Query('phone') phone?: string) {
     return this.messagesService.findAll(phone);
   }
+
+  @Get('health-metrics')
+  async getHealthMetrics() {
+    return this.messagesService.getHealthMetrics();
+  }
+
+  @Get('unique-customers')
+  async getUniqueCustomers(@Query('limit') limit?: string) {
+    const limitNumber = limit ? parseInt(limit, 10) : undefined;
+    return this.messagesService.getUniqueCustomers(limitNumber);
+  }
 }

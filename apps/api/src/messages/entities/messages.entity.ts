@@ -34,6 +34,9 @@ export class Message {
 
   @Column({ type: 'int', nullable: true })
   urgency?: number;
+
+  @Column({ type: 'datetime', nullable: true })
+  timestamp?: Date;
 }
 
 export interface Action {

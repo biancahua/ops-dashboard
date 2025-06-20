@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm:dev:api\" \"npm:dev:web\"",
+    "is:both": "concurrently \"npm:is:api\" \"npm:is:web\"",
+    "is:api": "cd apps/api && npm install",
+    "is:web": "cd apps/web && npm install",
     "dev:api": "cd apps/api && npm run start:seed",
     "dev:web": "cd apps/web && npm run dev",
     "clean": "rm -rf node_modules && rm -rf apps/api/node_modules && rm -rf apps/web/node_modules",
@@ -25,7 +28,11 @@
   },
   "homepage": "https://github.com/biancahua/ops-dashboard#readme",
   "dependencies": {
-    "concurrently": "^9.1.2",
+    "@ant-design/icons": "^6.0.0",
+    "antd": "^5.26.1",
     "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
