@@ -212,36 +212,6 @@ export default function HealthMetricsPage() {
             </div>
           </Card>
         </Col>
-
-        {/* <Col xs={24} md={12} lg={12}>
-          <Card title="Attention Queue Status" style={{ height: '280px' }}>
-            <div style={{ textAlign: 'center' }}>
-              <Statistic
-                value={needsAttentionCount}
-                valueStyle={{ color: '#f5222d', fontSize: '32px' }}
-              />
-              <Text type="secondary">Conversations waiting</Text>
-              <Divider />
-              <Row justify="space-between" style={{ marginBottom: '16px' }}>
-                <Col>
-                  <Text type="secondary">Priority</Text>
-                  <br />
-                  <Text strong>High</Text>
-                </Col>
-                <Col>
-                  <Text type="secondary">Avg Wait Time</Text>
-                  <br />
-                  <Text strong>~15 min</Text>
-                </Col>
-              </Row>
-              <Link href="/needs-attention">
-                <Button type="primary" danger block>
-                  Review Queue
-                </Button>
-              </Link>
-            </div>
-          </Card>
-        </Col> */}
       </Row>
     </div>
   );
