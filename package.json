@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm:dev:api\" \"npm:dev:web\"",
-    "is:both": "concurrently \"npm:is:api\" \"npm:is:web\"",
+    "is:all": "npm install && concurrently \"npm:is:api\" \"npm:is:web\"",
     "is:api": "cd apps/api && npm install",
     "is:web": "cd apps/web && npm install",
     "dev:api": "cd apps/api && npm run start:seed",
